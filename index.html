@@ -129,8 +129,10 @@
   .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,39,71,0.1); }
   .card .ico {
     width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
-    background: var(--sky); color: var(--blue); font-size: 1.3rem; margin-bottom: 16px;
+    background: var(--sky); color: var(--blue); margin-bottom: 16px;
   }
+  .card .ico svg { width: 24px; height: 24px; }
+  .edu-card .ico svg { width: 30px; height: 30px; }
   .card h3 { font-size: 1.12rem; color: var(--navy); font-weight: 600; }
   .card p { color: var(--muted); font-size: .9rem; margin-top: 6px; }
   @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } }
@@ -153,7 +155,7 @@
     border: 1px solid var(--line); border-radius: 16px; padding: 30px;
     display: flex; gap: 18px; align-items: flex-start;
   }
-  .edu-card .ico { font-size: 2rem; }
+  .edu-card .ico { color: var(--blue); flex-shrink: 0; }
   .edu-card h3 { color: var(--navy); font-size: 1.15rem; font-weight: 600; }
   .edu-card p { color: var(--muted); font-size: .92rem; margin-top: 4px; }
   @media (max-width: 680px) { .edu-grid { grid-template-columns: 1fr; } }
@@ -188,7 +190,20 @@
   .closing h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; }
   .closing .last { color: var(--gold-soft); }
   .closing p { color: #c3d0e1; max-width: 520px; margin: 16px auto 28px; }
+  .socials { display: flex; justify-content: center; gap: 16px; margin-top: 10px; }
+  .socials a {
+    width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; transition: background .2s, transform .15s, border-color .2s;
+  }
+  .socials a:hover { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); transform: translateY(-3px); }
+  .socials svg { width: 22px; height: 22px; }
+
   footer { background: var(--navy-deep); color: #8fa0b5; text-align: center; padding: 30px 0; font-size: .85rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .footer-socials { display: flex; justify-content: center; gap: 14px; margin: 14px 0 6px; }
+  .footer-socials a { color: #8fa0b5; transition: color .2s; }
+  .footer-socials a:hover { color: #fff; }
+  .footer-socials svg { width: 20px; height: 20px; }
   footer .brand { color: #fff; font-size: 1rem; margin-bottom: 6px; display: inline-block; }
 </style>
 </head>
@@ -251,22 +266,22 @@
     </div>
     <div class="cards">
       <div class="card">
-        <div class="ico">🏆</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
         <h3>Indivior Pinnacle Award</h3>
         <p>Top-performer recognition at Indivior.</p>
       </div>
       <div class="card">
-        <div class="ico">🏆</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
         <h3>Syneos Pinnacle Award</h3>
         <p>Top-performer recognition at Syneos Health.</p>
       </div>
       <div class="card">
-        <div class="ico">🚀</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
         <h3>Pioneer in the Lead</h3>
         <p>Honored for leadership and front-line impact.</p>
       </div>
       <div class="card">
-        <div class="ico">📈</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3>Pioneer on the Move</h3>
         <p>Recognized for momentum and rising performance.</p>
       </div>
@@ -322,14 +337,14 @@
       </div>
       <div class="edu-list">
         <div class="edu-card">
-          <div class="ico">🎓</div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg></div>
           <div>
             <h3>Graduated Cum Laude</h3>
             <p>University of Kentucky — academic honors distinction.</p>
           </div>
         </div>
         <div class="edu-card">
-          <div class="ico">💙</div>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
           <div>
             <h3>University of Kentucky Dance Team</h3>
             <p>Member of the elite collegiate dance program — discipline, teamwork, and performance under pressure.</p>
@@ -358,13 +373,29 @@
     </div>
     <h2>Let's <span class="last">Connect</span></h2>
     <p>Interested in working together or learning more about my experience in clinical sales and specialty pharmaceuticals? I'd love to hear from you.</p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/brecke-helman-7a38a718/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/brecke.helman" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span class="brand">Brecke Stricker Helman</span><br />
-    Senior Clinical Sales Specialist &nbsp;·&nbsp; 2× Pinnacle Award Winner<br />
+    Senior Clinical Sales Specialist &nbsp;·&nbsp; 2× Pinnacle Award Winner
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/brecke-helman-7a38a718/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/brecke.helman" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+    </div>
     <span style="opacity:.6">© 2026 Brecke Stricker Helman. All rights reserved.</span>
   </div>
 </footer>
